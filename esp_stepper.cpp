@@ -238,7 +238,7 @@ void inline stepper::calc_next_step()
 	if (speed_up_flag) {
 		/* StepPeriod = StepPeriod(1 - a * StepPeriod ^ 2) */
 		next_step_per_us = cur_step_per_in_us - acc_step_per_us *
-																											 cur_per_sqrt * cur_step_per_in_us;
+			cur_per_sqrt * cur_step_per_in_us;
 		if (next_step_per_us < period_us_per_step)
 			next_step_per_us = period_us_per_step;
 	}
@@ -246,8 +246,7 @@ void inline stepper::calc_next_step()
 	/* check if decelerating */
 	if (slow_down_flag) {
 		next_step_per_us = cur_step_per_in_us + dec_step_per_us *
-																											 cur_per_sqrt * cur_step_per_in_us;
-
+			cur_per_sqrt * cur_step_per_in_us;
 		if (next_step_per_us > per_slowest_step)
 			next_step_per_us = per_slowest_step;
 	}
