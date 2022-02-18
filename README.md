@@ -33,8 +33,4 @@ void loop() {
 }
 ~~~
 ### Additional information
-In this example the next motor.move() call is a waiting call. It detects that previous movement is not done and keeps controlling the motor until the movement is finished.
-In order to control the motor using non-waiting calls, you should specify which CPU you want to use and which queue size you need to keep your movement data.
-Queue size equal to 1 will make a second motor.move() waiting. A bigger queue size will simply be a memory waste. If you want program for example 5 movement and keep executing your code furder you need to use queue size = 5.
-There is no checking for stop functionality implemented. Also, it is not checking for the next segment to properly change the speed. Thus it's not suitable for the CNC control.
- Only for some simple applications.
+In this example the next motor.move() call is a waiting call. It detects that previous movement is not done and keeps controlling the motor until the movement is finished. In order to control the motor using non-waiting calls, you should specify which CPU you want to use and which queue size you need to keep your movement data. Queue size equal to 1 will make a second motor.move() waiting. A bigger queue size will simply be a memory waste. If you want the program for example 5 movements and keep executing your code furder you need to use queue size = 5. There is no checking for stop functionality implemented. Also, it is not checking for the next segment to properly change the speed. Thus it's not suitable for the CNC control. Only for some simple applications.
