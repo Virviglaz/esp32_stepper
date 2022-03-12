@@ -73,7 +73,7 @@ private:
 	void calc_next_step();
 	static void handler(void *param);
 
-	bool (*check_limit)(void *param);
+	bool (*check_limit)(void *param) = NULL;
 	void *limit_func_param;
 
 	gpio_num_t clk_pin;
