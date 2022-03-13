@@ -86,10 +86,10 @@ private:
 	float per_slowest_step;
 	float next_step_per_us;
 	float cur_step_per_in_us;
-	uint32_t last_time_step_us;
-	int32_t cur_pos_steps;
-	int32_t pos_dir_steps;
-	int8_t direction;
+	uint32_t last_time_step_us = 0;
+	int32_t cur_pos_steps = 0;
+	int32_t pos_dir_steps = 0;
+	int8_t direction = 0;
 	bool target_reached = true;
 	bool init_done = false;
 	bool force_stop = false;
