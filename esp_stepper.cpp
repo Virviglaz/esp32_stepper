@@ -371,6 +371,9 @@ void stepper::move(int32_t dist)
  */
 void stepper::wait_for_stop()
 {
+	if (cur_pos_steps == pos_dir_steps)
+		return;
+
 	/* Polling */
 	if (!handle) {
 		while (run()) { }
